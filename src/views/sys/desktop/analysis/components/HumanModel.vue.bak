@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="background3">
     <div class="module_title">模型展示</div>
     <img src="/src/assets/images/human_body.png" class="text-center background-image" />
@@ -203,4 +203,4 @@
     border: 2px solid black;
     border-radius: 5px; /* 圆角边框的半径 */
   }
-</style>
+</style> -->

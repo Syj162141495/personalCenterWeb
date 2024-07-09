@@ -7,30 +7,39 @@
     @tab-change="onTabChange"
   >
     <p v-if="activeKey === 'tab1'">
-      <VisitAnalysis />
+      <TiWen />
     </p>
     <p v-if="activeKey === 'tab2'">
-      <VisitAnalysisBar />
+      <XinLv />
     </p>
+    <p v-if="activeKey === 'tab3'">
+      <XueYa />
+    </p>
+    <template #tabBarExtraContent><a href="#" style="color: #009688">中山医康养</a></template>
   </Card>
 </template>
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { ref, inject } from 'vue';
   import { Card } from 'ant-design-vue';
-  import VisitAnalysis from './VisitAnalysis.vue';
-  import VisitAnalysisBar from './VisitAnalysisBar.vue';
-
+  import XueYa from './XueYa.vue';
+  import TiWen from './TiWen.vue';
+  import XinLv from './XinLv.vue';
   const loading = ref(true);
   const activeKey = ref('tab1');
-
+  const a = inject('phone');
+  console.log('接收参数', a);
   const tabListTitle = [
     {
       key: 'tab1',
-      tab: '流量趋势',
+      tab: '体温',
     },
     {
       key: 'tab2',
-      tab: '访问量',
+      tab: '心率',
+    },
+    {
+      key: 'tab3',
+      tab: '血压',
     },
   ];
 

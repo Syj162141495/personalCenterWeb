@@ -34,19 +34,30 @@ export interface BasicInformation extends BasicModel<BasicInformation> {
   sportsSituation?: string; // 运动情况
   modeOfMotion?: string; // 运动方式
   meditationSituation?: string; // 生活以静坐为主
+  biaoQian?: string; // 标签
+  sheBaoKaHao?: string; // 社保卡号
+  sheBaoXiaoFei?: decimal; // 社保消费
+  sheBaoJieSuan?: decimal; // 社保结算
 }
 
 export const basicInformationList = (params?: BasicInformation | any) =>
   defHttp.get<BasicInformation>({ url: adminPath + '/information/basicInformation/list', params });
 
 export const basicInformationListData = (params?: BasicInformation | any) =>
-  defHttp.post<Page<BasicInformation>>({ url: adminPath + '/information/basicInformation/listData', params });
+  defHttp.post<Page<BasicInformation>>({
+    url: adminPath + '/information/basicInformation/listData',
+    params,
+  });
 
 export const basicInformationForm = (params?: BasicInformation | any) =>
   defHttp.get<BasicInformation>({ url: adminPath + '/information/basicInformation/form', params });
 
 export const basicInformationSave = (params?: any, data?: BasicInformation | any) =>
-  defHttp.postJson<BasicInformation>({ url: adminPath + '/information/basicInformation/save', params, data });
+  defHttp.postJson<BasicInformation>({
+    url: adminPath + '/information/basicInformation/save',
+    params,
+    data,
+  });
 
 export const basicInformationImportData = (
   params: UploadFileParams,
@@ -61,4 +72,7 @@ export const basicInformationImportData = (
   );
 
 export const basicInformationDelete = (params?: BasicInformation | any) =>
-  defHttp.get<BasicInformation>({ url: adminPath + '/information/basicInformation/delete', params });
+  defHttp.get<BasicInformation>({
+    url: adminPath + '/information/basicInformation/delete',
+    params,
+  });

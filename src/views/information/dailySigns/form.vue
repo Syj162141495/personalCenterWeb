@@ -44,16 +44,6 @@
 
   const inputFormSchemas: FormSchema[] = [
     {
-      label: t('创建时间'),
-      field: 'createTime',
-      component: 'DatePicker',
-      componentProps: {
-        format: 'YYYY-MM-DD HH:mm',
-        showTime: { format: 'HH:mm' },
-      },
-      required: true,
-    },
-    {
       label: t('体重 (kg)'),
       field: 'weight',
       component: 'Input',
@@ -64,12 +54,6 @@
       field: 'heartRate',
       component: 'Input',
       rules: [{ pattern: /^\d+$/, message: t('请输入一个正整数') }],
-    },
-    {
-      label: t('呼吸频率 (次/分)'),
-      field: 'breathe',
-      component: 'Input',
-      rules: [{ pattern: /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/, message: t('请输入一个数值') }],
     },
     {
       label: t('收缩压 (mmHg)'),
@@ -89,10 +73,26 @@
       component: 'Input',
       rules: [{ pattern: /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/, message: t('请输入一个数值') }],
     },
+    {
+      label: t('呼吸频率 (次/分)'),
+      field: 'breathe',
+      component: 'Input',
+      rules: [{ pattern: /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/, message: t('请输入一个数值') }],
+    },
+    {
+      label: t('上报时间'),
+      field: 'createTime',
+      component: 'DatePicker',
+      componentProps: {
+        format: 'YYYY-MM-DD HH:mm',
+        showTime: { format: 'HH:mm' },
+      },
+      required: true,
+    },
   ];
 
   const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
-    labelWidth: 120,
+    labelWidth: 140,
     schemas: inputFormSchemas,
     baseColProps: { lg: 12, md: 24 },
   });

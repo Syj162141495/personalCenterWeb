@@ -68,7 +68,8 @@ export default {
   },
   login: {
     backSignIn: '返回',
-    signInFormTitle: '登录',
+    signInFormTitle: '客户中心',
+    // signInFormTitle: '登录',
     mobileSignInFormTitle: '手机登录',
     qrSignInFormTitle: '二维码登录',
     signUpFormTitle: '注册',

@@ -36,6 +36,15 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
+export const BaseInfoRoute: AppRouteRecordRaw = {
+  path: '/baseinfo',
+  name: 'Baseinfo',
+  component: () => import('/@/views/sys/desktop/analysis/index2.vue'),
+  meta: {
+    title: t('routes.basic.baseinfo'),
+  },
+};
+
 const ModPwdRoute: AppRouteModule = {
   path: '/modPwd',
   name: 'ModPwd',
@@ -54,4 +63,5 @@ export const basicRoutes = [
   ...mainOutRoutes,
   REDIRECT_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
+  BaseInfoRoute,
 ];

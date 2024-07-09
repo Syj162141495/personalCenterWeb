@@ -12,11 +12,8 @@
         </div>
         <div class="flex btn">
           <button style="color: #009688; font-size: 14px">众阳云健康</button>
-        </div>
-        <!-- <div class="flex btn" @click="eventclick">
-          <button class="tip-style">完善个人信息</button>
           <Icon icon="open-left|svg" class="ml-2 mt-2" size="23" />
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="md:flex enter-y mt-1">
@@ -55,51 +52,48 @@
         <div class="third-line"></div>
       </div>
     </div>
-    <InputForm @register="registerDrawer" />
   </Card>
 </template>
 <script lang="ts" setup>
   // import { propleInfo, targetProperty } from './info-utils';
-  import InputForm from '/@/views/information/basicInformation/form.vue';
-  import { useDrawer } from '/@/components/Drawer';
-  import { Icon } from '/@/components/Icon';
+  // import InputForm from '/@/views/information/basicInformation/form.vue';
+  // import { useDrawer } from '/@/components/Drawer';
+  // import { Icon } from '/@/components/Icon';
   import { Card } from 'ant-design-vue';
   import { Avatar } from 'ant-design-vue';
   import { defineProps, computed } from 'vue';
-  import { ref, onMounted } from 'vue';
-  import { getBaseInfo } from '/@/api/sys/desktopApi';
-  const phone = '13021646422';
-  // 使用 ref 创建一个响应式引用
-  const propleInfo = ref({
-    id: '',
-    height: 0,
-    weight: 0,
-  });
-  onMounted(async () => {
-    try {
-      // 调用异步函数并等待结果
-      const data = await getBaseInfo({
-        phone: phone,
-      });
-      // console.log(data);
-      // 更新响应式引用
-      propleInfo.value = data;
-      // 处理从 getBaseInfo 返回的数据
-      // console.log(data);
-    } catch (error) {
-      // 处理从 getBaseInfo 抛出的错误
-      console.error(error);
-    }
-  });
-  const [registerDrawer, { openDrawer }] = useDrawer();
+  // import { ref, onMounted } from 'vue';
+  // import { getBaseInfo } from '/@/api/sys/desktopApi';
+  // // 使用 ref 创建一个响应式引用
+  // const userInfo = ref({});
+  // const phone = '13021646422';
+  // onMounted(async () => {
+  //   try {
+  //     // 调用异步函数并等待结果
+  //     const data = await getBaseInfo({
+  //       phone: phone,
+  //     });
+  //     console.log(data);
+  //     // 更新响应式引用
+  //     userInfo.value = data;
+  //     // 处理从 getBaseInfo 返回的数据
+  //     // console.log(data);
+  //   } catch (error) {
+  //     // 处理从 getBaseInfo 抛出的错误
+  //     console.error(error);
+  //   }
+  // });
+  // const [registerDrawer, { openDrawer }] = useDrawer();
   // eslint-disable-next-line vue/require-prop-types
-  function eventclick() {
-    openDrawer(true, { id: propleInfo.value.id });
-  }
+  // function eventclick() {
+  //   openDrawer(true, { id: p.propleInfo.id });
+  // }
+  // eslint-disable-next-line vue/require-prop-types
+  const p = defineProps(['propleInfo']);
   const bmidata = computed(() => {
-    if (propleInfo.value && propleInfo.value.height && propleInfo.value.weight) {
-      const heightInMeters = propleInfo.value.height / 100; // 将身高从厘米转换为米
-      const bmi = propleInfo.value.weight / (heightInMeters * heightInMeters);
+    if (p.propleInfo && p.propleInfo.height && p.propleInfo.weight) {
+      const heightInMeters = p.propleInfo.height / 100; // 将身高从厘米转换为米
+      const bmi = p.propleInfo.weight / (heightInMeters * heightInMeters);
       return bmi.toFixed(2); // 直接返回格式化后的字符串
     }
     return '---'; // 如果缺少必要的数据，则返回占位符
@@ -127,8 +121,8 @@
 
   .content-title {
     color: #009688;
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 20px;
+    // margin-bottom: 2px;
     margin-top: 5px;
     margin-right: 20px;
   }

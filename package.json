@@ -34,6 +34,12 @@
   "dependencies": {
     "@ant-design/colors": "^7.0.0",
     "@ant-design/icons-vue": "^7.0.1",
+    "@fullcalendar/core": "^6.1.10",
+    "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.10",
+    "@fullcalendar/list": "^6.1.13",
+    "@fullcalendar/timegrid": "^6.1.10",
+    "@fullcalendar/vue3": "^6.1.10",
     "@iconify/iconify": "^3.1.1",
     "@logicflow/core": "^1.2.18",
     "@logicflow/extension": "^1.2.19",
@@ -70,12 +76,7 @@
     "vue-json-pretty": "^2.3.0",
     "vue-router": "^4.2.5",
     "vue-types": "^5.1.1",
-    "xlsx": "^0.18.5",
-    "@fullcalendar/core": "^6.1.10",
-    "@fullcalendar/daygrid": "^6.1.10",
-    "@fullcalendar/interaction": "^6.1.10",
-    "@fullcalendar/timegrid": "^6.1.10",
-    "@fullcalendar/vue3": "^6.1.10"
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.157",

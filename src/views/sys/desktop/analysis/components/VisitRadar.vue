@@ -1,6 +1,6 @@
 <template>
   <Card title="转化率" :loading="loading">
-    <div ref="chartRef" class="w-full h-75"></div>
+    <div ref="chartRef" class="w-full md:w-1/3 h-75"></div>
   </Card>
 </template>
 <script lang="ts" setup>

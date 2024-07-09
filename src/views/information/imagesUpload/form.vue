@@ -10,7 +10,7 @@
     :okAuth="'information:imagesUpload:edit'"
     @register="registerDrawer"
     @ok="handleSubmit"
-    width="60%"
+    width="50%"
   >
     <template #title>
       <Icon :icon="getTitle.icon" class="m-1 pr-1" />
@@ -45,6 +45,16 @@
 
   const inputFormSchemas: FormSchema[] = [
     {
+      label: t('时间'),
+      field: 'time',
+      component: 'DatePicker',
+      componentProps: {
+        format: 'YYYY-MM-DD HH:mm',
+        showTime: { format: 'HH:mm' },
+      },
+      required: true,
+    },
+    {
       label: t('类型'),
       field: 'type',
       component: 'Select',
@@ -74,21 +84,11 @@
       },
     },
     {
-      label: t('时间'),
-      field: 'time',
-      component: 'DatePicker',
-      componentProps: {
-        format: 'YYYY-MM-DD HH:mm',
-        showTime: { format: 'HH:mm' },
-      },
-      required: true,
-    },
-    {
       label: t('描述'),
       field: 'description',
-      component: 'Input',
+      component: 'InputTextArea',
       componentProps: {
-        maxlength: 255,
+        maxlength: 1000,
       },
     },
     {
@@ -108,7 +108,7 @@
   const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
     labelWidth: 120,
     schemas: inputFormSchemas,
-    baseColProps: { lg: 12, md: 24 },
+    baseColProps: { lg: 24, md: 48 },
   });
 
   const [registerDrawer, { setDrawerProps, closeDrawer }] = useDrawerInner(async (data) => {

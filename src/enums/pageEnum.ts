@@ -3,6 +3,7 @@ export enum PageEnum {
   BASE_LOGIN = '/login',
   // basic home path
   BASE_HOME = '/desktop',
+  BASE_HOME_ANALYSIS = '/baseinfo',
   // error page path
   ERROR_PAGE = '/exception',
   // error log page path

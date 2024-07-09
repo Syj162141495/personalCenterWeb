@@ -1,6 +1,5 @@
 <template>
   <Card title="医保卡实时结算" class="md:h-80">
-    <!-- <div class="module_title">医保卡实时结算</div> -->
     <div class="card w-full h-50">
       <div class="card-numbers">
         <div class="card-number-left">

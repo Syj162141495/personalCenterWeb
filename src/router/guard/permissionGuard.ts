@@ -9,9 +9,10 @@ const ROOT_PATH = RootRoute.path;
 const HOME_PATH = PageEnum.BASE_HOME;
 const LOGIN_PATH = PageEnum.BASE_LOGIN;
 const MOD_PWD_PAGE = PageEnum.MOD_PWD_PAGE;
+const BASE_HOME_ANALYSIS = PageEnum.BASE_HOME_ANALYSIS;
 
 // 白名单路由列表，无需权限即可访问的页面
-const whitePathList: PageEnum[] = [LOGIN_PATH, MOD_PWD_PAGE];
+const whitePathList: PageEnum[] = [LOGIN_PATH, MOD_PWD_PAGE, BASE_HOME_ANALYSIS];
 
 export function createPermissionGuard(router: Router) {
   const userStore = useUserStoreWithOut();
@@ -32,6 +33,7 @@ export function createPermissionGuard(router: Router) {
 
     // Whitelist can be directly entered
     if (whitePathList.includes(to.path as PageEnum)) {
+      // console.log(to.path);
       // if (to.path === LOGIN_PATH && token) {
       //   const isSessionTimeout = userStore.getSessionTimeout;
       //   try {
@@ -49,6 +51,13 @@ export function createPermissionGuard(router: Router) {
           console.error(error);
         }
       }
+      // if (to.path === MOD_PWD_PAGE) {
+      //   try {
+      //     await userStore.getUserInfoAction();
+      //   } catch (error: any) {
+      //     console.error(error);
+      //   }
+      // }
       next();
       return;
     }

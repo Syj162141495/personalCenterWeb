@@ -178,8 +178,8 @@
   const gp = ref(false);
 
   const formData = reactive({
-    account: 'system',
-    password: '',
+    account: '13021646422',
+    password: '123456',
     validCode: '',
     corpCode: '',
   });

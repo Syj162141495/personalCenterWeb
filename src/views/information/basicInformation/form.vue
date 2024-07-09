@@ -62,6 +62,22 @@
       required: true,
     },
     {
+      label: t('年龄'),
+      field: 'age',
+      component: 'Input',
+      rules: [{ pattern: /^\d+$/, message: t('请输入一个正整数') }],
+    },
+    {
+      label: t('生日'),
+      field: 'birthday',
+      component: 'DatePicker',
+      componentProps: {
+        format: 'YYYY-MM-DD',
+        // format: 'YYYY-MM-DD HH:mm',
+        // showTime: { format: 'HH:mm' },
+      },
+    },
+    {
       label: t('婚姻状态'),
       field: 'maritalStatus',
       component: 'Select',
@@ -83,21 +99,6 @@
         maxlength: 20,
       },
       required: true,
-    },
-    {
-      label: t('生日'),
-      field: 'birthday',
-      component: 'DatePicker',
-      componentProps: {
-        format: 'YYYY-MM-DD HH:mm',
-        showTime: { format: 'HH:mm' },
-      },
-    },
-    {
-      label: t('年龄'),
-      field: 'age',
-      component: 'Input',
-      rules: [{ pattern: /^\d+$/, message: t('请输入一个正整数') }],
     },
     {
       label: t('患者电话'),
@@ -202,17 +203,6 @@
       },
     },
     {
-      label: t('所患疾病'),
-      field: 'illness',
-      fieldLabel: 'illnessName',
-      component: 'ListSelect',
-      componentProps: {
-        selectType: 'illnessSelect',
-        checkbox: 'true',
-      },
-      colProps: { lg: 24, md: 24 },
-    },
-    {
       label: t('身高（cm）'),
       field: 'height',
       component: 'Input',
@@ -284,6 +274,17 @@
       componentProps: {
         dictType: 'sys_yes_no',
       },
+    },
+    {
+      label: t('所患疾病'),
+      field: 'illness',
+      fieldLabel: 'illnessName',
+      component: 'ListSelect',
+      componentProps: {
+        selectType: 'illnessSelect',
+        checkbox: 'true',
+      },
+      colProps: { lg: 24, md: 24 },
     },
   ];
 

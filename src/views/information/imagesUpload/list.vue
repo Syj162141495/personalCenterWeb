@@ -50,40 +50,49 @@
     labelWidth: 90,
     schemas: [
       {
-        label: t('类型'),
-        field: 'type',
-        component: 'Input',
-      },
-      {
-        label: t('其他'),
-        field: 'other',
-        component: 'Input',
-      },
-      {
         label: t('时间'),
         field: 'time',
         component: 'DatePicker',
         componentProps: {
-          format: 'YYYY-MM-DD HH:mm',
-          showTime: { format: 'HH:mm' },
+          format: 'YYYY-MM-DD',
+          // format: 'YYYY-MM-DD HH:mm',
+          // showTime: { format: 'HH:mm' },
         },
       },
       {
-        label: t('描述'),
-        field: 'description',
+        label: t('类型'),
+        field: 'type',
         component: 'Input',
       },
+      // {
+      //   label: t('其他'),
+      //   field: 'other',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('描述'),
+      //   field: 'description',
+      //   component: 'Input',
+      // },
     ],
   };
 
   const tableColumns: BasicColumn[] = [
     {
+      title: t('时间'),
+      dataIndex: 'time',
+      key: 'a.time',
+      sorter: true,
+      width: 200,
+      align: 'center',
+    },
+    {
       title: t('类型'),
       dataIndex: 'type',
       key: 'a.type',
       sorter: true,
-      width: 230,
-      align: 'left',
+      width: 180,
+      align: 'center',
       slot: 'firstColumn',
     },
     {
@@ -91,15 +100,7 @@
       dataIndex: 'other',
       key: 'a.other',
       sorter: true,
-      width: 130,
-      align: 'left',
-    },
-    {
-      title: t('时间'),
-      dataIndex: 'time',
-      key: 'a.time',
-      sorter: true,
-      width: 130,
+      width: 180,
       align: 'center',
     },
     {
@@ -107,7 +108,7 @@
       dataIndex: 'description',
       key: 'a.description',
       sorter: true,
-      width: 130,
+      // width: 130,
       align: 'left',
     },
   ];

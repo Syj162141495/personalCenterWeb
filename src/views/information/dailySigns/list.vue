@@ -61,55 +61,56 @@
     labelWidth: 90,
     schemas: [
       {
-        label: t('创建时间'),
+        label: t('上报时间'),
         field: 'createTime',
         component: 'DatePicker',
         componentProps: {
-          format: 'YYYY-MM-DD HH:mm',
-          showTime: { format: 'HH:mm' },
+          format: 'YYYY-MM-DD',
+          // format: 'YYYY-MM-DD HH:mm',
+          // showTime: { format: 'HH:mm' },
         },
       },
-      {
-        label: t('体重 (kg)'),
-        field: 'weight',
-        component: 'Input',
-      },
-      {
-        label: t('心率 (次/分)'),
-        field: 'heartRate',
-        component: 'Input',
-      },
-      {
-        label: t('呼吸频率 (次/分)'),
-        field: 'breathe',
-        component: 'Input',
-      },
-      {
-        label: t('收缩压 (mmHg)'),
-        field: 'systolicPressure',
-        component: 'Input',
-      },
-      {
-        label: t('舒张压 (mmHg)'),
-        field: 'diastolicPressure',
-        component: 'Input',
-      },
-      {
-        label: t('血糖 (mmol/L)'),
-        field: 'bloodSugar',
-        component: 'Input',
-      },
+      // {
+      //   label: t('体重 (kg)'),
+      //   field: 'weight',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('心率 (次/分)'),
+      //   field: 'heartRate',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('呼吸频率 (次/分)'),
+      //   field: 'breathe',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('收缩压 (mmHg)'),
+      //   field: 'systolicPressure',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('舒张压 (mmHg)'),
+      //   field: 'diastolicPressure',
+      //   component: 'Input',
+      // },
+      // {
+      //   label: t('血糖 (mmol/L)'),
+      //   field: 'bloodSugar',
+      //   component: 'Input',
+      // },
     ],
   };
 
   const tableColumns: BasicColumn[] = [
     {
-      title: t('创建时间'),
+      title: t('上报时间'),
       dataIndex: 'createTime',
       key: 'a.create_time',
       sorter: true,
       width: 230,
-      align: 'left',
+      align: 'center',
       slot: 'firstColumn',
     },
     {
@@ -118,7 +119,7 @@
       key: 'a.weight',
       sorter: true,
       width: 130,
-      align: 'right',
+      align: 'center',
     },
     {
       title: t('心率 (次/分)'),
@@ -134,7 +135,7 @@
       key: 'a.breathe',
       sorter: true,
       width: 130,
-      align: 'right',
+      align: 'center',
     },
     {
       title: t('收缩压 (mmHg)'),
@@ -158,7 +159,7 @@
       key: 'a.blood_sugar',
       sorter: true,
       width: 130,
-      align: 'right',
+      align: 'center',
     },
   ];
 

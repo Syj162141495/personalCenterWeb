@@ -18,11 +18,11 @@
           <div class="my-auto">
             <!-- 标题文字 -->
             <div class="flex text-center">
-              <AppLogo class="-enter-x logo" />
+              <!-- <AppLogo class="-enter-x logo" /> -->
               <!-- <div class="mt-5 font-normal text-white text-md -enter-x d-inline fs-4">个人中心</div>
               <div class="mt-5 font-normal text-white text-md -enter-x d-inline m-1">医康养平台</div> -->
             </div>
-            <img :alt="title" src="../../../assets/svg/login-box-bg.svg" class="w-1/2 -enter-x" />
+            <!-- <img :alt="title" src="../../../assets/svg/login-box-bg.svg" class="w-1/2 -enter-x" /> -->
             <div class="mt-10 font-medium text-white -enter-x">
               <!-- <span class="inline-block mt-4 text-3xl"> 医康养平台个人中心</span> -->
             </div>
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="mt-5 font-normal text-white text-md text-center">
+      <div class="mt-5 font-normal text-black text-md text-center">
         主办单位:xxx 承办单位:xxx 运营单位:xxx<br />
         Copyright @ xxx Al Rights Reserved xxx 123456789xxxxx号 备案号:xxx<br />
       </div>
@@ -178,7 +178,7 @@
       background-image: url(/@/assets/images/login-background.jpg);
       background-position: 100%;
       background-repeat: no-repeat;
-      background-size: auto 100%;
+      background-size: 100% 100%;
       content: '';
       @media (max-width: @screen-lg) {
         display: none;
