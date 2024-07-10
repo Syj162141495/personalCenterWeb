@@ -1,5 +1,5 @@
 <template>
-  <Card title="诊断建议" class="md:h-120">
+  <Card title="诊断建议" class="md:h-122">
     <!-- <div class="module_title"></div> -->
     <div class="schedule-calendar">
       <div class="calendar-box">
