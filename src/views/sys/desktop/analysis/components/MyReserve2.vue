@@ -13,6 +13,9 @@
         :dataSource="dataSource"
         :pagination="false"
       />
+      <template #extra>
+        <a href="#" style="color: #1951be">@协作网</a>
+      </template>
     </Card>
   </div>
 </template>

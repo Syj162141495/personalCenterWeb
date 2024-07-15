@@ -15,7 +15,7 @@
     <p v-if="activeKey === 'tab3'">
       <XueYa />
     </p>
-    <template #tabBarExtraContent><a href="#" style="color: #009688">中山医康养</a></template>
+    <template #tabBarExtraContent><a href="#" style="color: #1951be">@中山医康养</a></template>
   </Card>
 </template>
 <script lang="ts" setup>

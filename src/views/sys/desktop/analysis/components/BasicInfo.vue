@@ -11,7 +11,7 @@
           <span class="name ml-3">{{ propleInfo.patientName }}</span>
         </div>
         <div class="flex btn">
-          <button style="color: #009688; font-size: 14px">众阳云健康</button>
+          <button style="color: #1951be; font-size: 14px">@众阳云健康</button>
         </div>
         <!-- <div class="flex btn" @click="eventclick">
           <button class="tip-style">完善个人信息</button>

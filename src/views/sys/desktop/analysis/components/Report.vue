@@ -25,6 +25,9 @@
           <div>去预约>></div>
         </div>
       </div>
+      <template #extra>
+        <a href="#" style="color: #1951be">@协作网</a>
+      </template>
     </Card>
   </div>
 </template>

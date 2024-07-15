@@ -18,14 +18,14 @@
           <!-- <CountTo prefix="" :startVal="1" :endVal="item.value" class="text-2xl text-center" /> -->
         </div>
         <template #extra>
-          <a href="#" style="color: #009688">中山医康养</a>
+          <a href="#" style="color: #1951be">@中山医康养</a>
         </template>
       </Card>
     </template>
     <Card title="近一年预约科室占比" size="small" class="md:w-2/4" :loading="loading">
       <div ref="chartRef" class="w-full h-50"></div>
       <template #extra>
-        <a href="#" style="color: #009688">众阳云健康</a>
+        <a href="#" style="color: #1951be">@众阳云健康</a>
       </template>
     </Card>
   </div>

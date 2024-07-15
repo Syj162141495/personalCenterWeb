@@ -1,5 +1,5 @@
 <template>
-  <Card title="诊断建议" class="md:h-122">
+  <Card title="诊断建议" class="md:h-123">
     <!-- <div class="module_title"></div> -->
     <div class="schedule-calendar">
       <div class="calendar-box">
@@ -89,7 +89,7 @@
       </div>
     </div>
     <template #extra>
-      <a href="#" style="color: #009688">众阳云健康</a>
+      <a href="#" style="color: #1951be">@协作网</a>
     </template>
   </Card>
 </template>
@@ -336,8 +336,8 @@
     background: #ecf6ff;
     border-radius: 8px;
     height: 123px;
-    margin-bottom: 10px;
-    margin-top: 20px;
+    // margin-bottom: 10px;
+    // margin-top: 20px;
   }
   .calendar-box {
     position: relative;

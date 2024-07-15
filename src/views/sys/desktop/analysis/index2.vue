@@ -19,7 +19,7 @@
         <!-- 基础信息 -->
         <BasicInfo class="w-full !md:mx-4 !md:my-0 h-2/8" :propleInfo="userInfo" />
         <!-- 诊断意见 -->
-        <HealthEvent class="w-full !my-4 !md:mx-4 md:h-4/9" :phone="phone" />
+        <HealthEvent class="w-full !my-4 !md:mx-4" :phone="phone" />
         <!-- 医保卡结算 -->
         <MedicalInsurance class="w-full !md:mx-4 h-5/8" :propleInfo="userInfo" />
       </div>

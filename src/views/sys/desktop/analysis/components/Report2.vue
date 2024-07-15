@@ -35,7 +35,7 @@
         </div>
       </div>
       <template #extra>
-        <a href="#" style="color: #009688">众阳云健康</a>
+        <a href="#" style="color: #1951be">@协作网</a>
       </template>
     </Card>
   </div>
