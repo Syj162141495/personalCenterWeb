@@ -53,6 +53,9 @@
         </div>
         <div class="hr-style"></div>
         <div class="third-line"></div>
+        <div class="flex flex-row-reverse p-1`">
+          <button style="color: #1951be; font-size: 14px" @click="() => p.checkDetailedInfo()">查看详情</button>
+        </div>
       </div>
     </div>
     <InputForm @register="registerDrawer" />
@@ -66,8 +69,11 @@
   import { Card } from 'ant-design-vue';
   import { Avatar } from 'ant-design-vue';
   import { defineProps, computed } from 'vue';
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, getCurrentInstance } from 'vue';
   import { getBaseInfo } from '/@/api/sys/desktopApi';
+  const p = defineProps(['checkDetailedInfo']);
+  console.log(p);
+  console.log(p.checkDetailedInfo);
   const phone = '13021646422';
   // 使用 ref 创建一个响应式引用
   const propleInfo = ref({
