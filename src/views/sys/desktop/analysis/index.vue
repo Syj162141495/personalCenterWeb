@@ -23,7 +23,7 @@
         ><CloseOutlined
       /></button>
       <div class="flex flex-row h-full">
-        <div class="flex-none w-100 h-full p-4">
+        <div class="flex-none w-90 h-full p-4">
           <div class="h-full flex justify-between flex-col">
             <div>
               <Avatar :size="{ md: 45 }" style="height: 45px; width: 45px">
@@ -31,8 +31,6 @@
                   <img src="/resource/img/123.jpg" />
                 </template>
               </Avatar>
-            </div>
-            <div>
               <div class="flex">
                 <div class="flex">
                   <div class="mr-2 item_title">性别</div>
@@ -65,11 +63,7 @@
               </div>
             </div>
             <Divider />
-            <div class="flex-1">
-              <div v-for="(text, index) in labels" :key="index" :style="cloudStyles[index]">
-                {{ text }}
-              </div>
-            </div>
+            <div id="wordcloud"></div>
             <div class="flex-none flex justify-between">
               <Button type="primary">添加</Button>
               <Button type="primary">修改</Button>
@@ -231,6 +225,8 @@
   import { CollapseTransition } from '/@/components/Transition';
   import { CloseOutlined } from '@ant-design/icons-vue';
   import { Card, Divider, Tabs, TabPane, Avatar, Button, Table } from 'ant-design-vue';
+  import * as d3 from 'd3';
+  import * as cloud from 'd3-cloud';
   const userStore = useUserStore();
   console.log(userStore);
   // 使用 ref 创建一个响应式引用
@@ -249,6 +245,57 @@
       userInfo.value = data;
       // 处理从 getBaseInfo 返回的数据
       // console.log(data);
+
+      const words = [
+        { text: '中年', size: 24 },
+        { text: '高血压', size: 24 },
+        { text: '高血糖', size: 24 },
+        { text: '高血脂', size: 24 },
+      ];
+
+      // const layout = d3.layout.cloud()
+      const layout = cloud()
+        .size([360, 300])
+        .words(words)
+        .padding(5)
+        .rotate(function () {
+          // return ~~(Math.random() * 2) * 90;
+          return 0;
+        })
+        .font('Impact')
+        .fontSize(function (d) {
+          return d.size;
+        })
+        .on('end', draw);
+
+      layout.start();
+
+      function draw(words) {
+        d3.select('#wordcloud')
+          .append('svg')
+          .attr('width', layout.size()[0])
+          .attr('height', layout.size()[1])
+          .append('g')
+          .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
+          .selectAll('text')
+          .data(words)
+          .enter()
+          .append('text')
+          .style('font-size', function (d) {
+            return d.size + 'px';
+          })
+          .style('font-family', 'Impact')
+          .style('fill', function (d, i) {
+            return d3.schemeCategory10[i % 10];
+          })
+          .attr('text-anchor', 'middle')
+          .attr('transform', function (d) {
+            return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')';
+          })
+          .text(function (d) {
+            return d.text;
+          });
+      }
     } catch (error) {
       // 处理从 getBaseInfo 抛出的错误
       console.error(error);
@@ -267,37 +314,6 @@
     }
     return '---'; // 如果缺少必要的数据，则返回占位符
   });
-
-  const labels = ['中年', '高血压', '高血糖', '高血脂'];
-  const genStyles = () => {
-    // 设定颜色
-    const colors = [
-      ['#01FFFC', '#01FFFC'],
-      ['#01FF84', '#01FF84'],
-      ['#5843D7', '#E2DDFF'],
-      ['#FD374E', '#FD374E'],
-    ];
-    const colorIndex = Math.floor(Math.random() * 4);
-    // 设定随机位置
-    const top = Math.floor(Math.random() * 120) + 'px';
-    const left = Math.floor(Math.random() * 160) + 'px';
-
-    return {
-      position: 'relative',
-      top,
-      left,
-      display: 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'border-radius': '6px',
-      width: '70px',
-      height: '30px',
-      margin: '15px',
-      color: colors[colorIndex][1],
-      'box-shadow': `0 0 3px 1px ${colors[colorIndex][0]} inset`,
-    };
-  };
-  const cloudStyles = labels.map((_label) => genStyles());
 
   const dsMedicalRecord = [];
   const dsDailySign = [];
@@ -588,8 +604,8 @@
 
   .content-title {
     color: #009688;
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    /* margin-bottom: 5px; */
     margin-top: 5px;
     margin-right: 20px;
   }
